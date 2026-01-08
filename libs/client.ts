@@ -1,14 +1,7 @@
 import { createClient } from 'microcms-js-sdk';
 
-if (!process.env.MICROCMS_SERVICE_DOMAIN) {
-  throw new Error("MICROCMS_SERVICE_DOMAIN is required");
-}
-
-if (!process.env.MICROCMS_API_KEY) {
-  throw new Error("MICROCMS_API_KEY is required");
-}
-
 export const client = createClient({
-  serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
-  apiKey: process.env.MICROCMS_API_KEY,
+  // もし環境変数が空なら、直接文字列を入れてしまう（テスト用）
+  serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN || 'd4szsda8hr',
+  apiKey: process.env.MICROCMS_API_KEY || '2wZkbdMZdI2GGBg27I69NFN8g7wASDD5SqWR',
 });
